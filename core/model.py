@@ -3,7 +3,7 @@ import tensorflow as tf
 
 def vgg16(inputs,
           weights):
-    """
+    """VGG16 as loss model
 
     :param inputs: Input tensor (image)
     :param weights: Numpy array

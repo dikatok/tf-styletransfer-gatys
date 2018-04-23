@@ -2,9 +2,10 @@ import tensorflow as tf
 
 
 def gram_matrix(x):
-    """
+    """Calculate gram matrix
 
     :param x: Input tensor
+    :param data_format: Either 'channels_last' or 'channels_first'
     :return: Gram matrix (self inner product of x_reshape)
     """
 
@@ -19,7 +20,7 @@ def loss_fun(target_content_features,
              transferred_style_features,
              content_loss_weight,
              style_loss_weight):
-    """
+    """Loss function
 
     :param target_content_features: List of target content features tensor
     :param target_style_features: List of target style features tensor

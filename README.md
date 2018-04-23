@@ -17,7 +17,7 @@ This is Tensorflow implementation of [A Neural Algorithm of Artistic Style
 
 ## Installation
 - `pip install -r requirements.txt`
-- Download vgg16 weights file from [here](http://www.cs.toronto.edu/~frossard/post/vgg16/)
+- Download vgg16 weights file from either [here](https://drive.google.com/open?id=1vpyQ855RCRHkO-9oOlo4JLaccS8oguW0) which contains only the required kernels (~55mb) or the full one from [here](http://www.cs.toronto.edu/~frossard/post/vgg16/) which the previous link is based on (~554mb)
 
 ## Usage
     Usage:

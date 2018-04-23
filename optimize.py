@@ -16,7 +16,7 @@ def parse_args():
     parser.add_argument('--learning_rate', default=1e1, help='Learning rate.', type=int)
     parser.add_argument('--num_iter', default=1000, help='Number of iterations.', type=int)
     parser.add_argument('--log_iter', default=100, help='Log interval.', type=int)
-    parser.add_argument('--vgg_path', default='vgg16_weights.npz', help='Path to vgg weights.', type=str)
+    parser.add_argument('--vgg_path', default='vgg16_small.npz', help='Path to vgg weights.', type=str)
     parser.add_argument(
         '--content_features',
         default=['conv4_2'],
@@ -30,13 +30,12 @@ def parse_args():
         type=str,
         nargs='+')
     parser.add_argument('--content_weight', default=1, help='Content loss weight.', type=float)
-    parser.add_argument('--style_weight', default=1e3, help='Style loss weight.', type=float)
+    parser.add_argument('--style_weight', default=1e4, help='Style loss weight.', type=float)
     return parser.parse_args()
 
 
-if __name__ == "__main__":
+def main(_):
     args = parse_args()
-    print(args)
 
     content_image = tf.keras.preprocessing.image.img_to_array(
         tf.keras.preprocessing.image.load_img(args.content_image))
@@ -94,3 +93,7 @@ if __name__ == "__main__":
     print(f"Finished {args.num_iter} iterations in {end - start} seconds")
 
     tf.keras.preprocessing.image.array_to_img(result[0]).save(args.out_image)
+
+
+if __name__ == "__main__":
+    tf.app.run(main=main)
